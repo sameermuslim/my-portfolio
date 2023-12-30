@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Your existing code for the showSection function
   }
 });
-const menuItems = document.querySelectorAll("#menubar-ul li a");
+const menuItems = document.querySelectorAll("#menu-bar-ul li a");
 
 // Add click event listener to each menu item
 menuItems.forEach((item) => {

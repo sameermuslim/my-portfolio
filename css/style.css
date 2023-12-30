@@ -61,20 +61,20 @@
   --ff-poppins: "Poppins", sans-serif;
 
   /* font-size */
-  --fs-1: 24px;
-  --fs-2: 18px;
-  --fs-3: 17px;
-  --fs-4: 16px;
-  --fs-5: 15px;
-  --fs-6: 14px;
-  --fs-7: 13px;
-  --fs-8: 11px;
+  --font-size-1: 24px;
+  --font-size-2: 18px;
+  --font-size-3: 17px;
+  --font-size-4: 16px;
+  --font-size-5: 15px;
+  --font-size-6: 14px;
+  --font-size-7: 13px;
+  --font-size-8: 11px;
 
   /* font-weight */
-  --fw-300: 300;
-  --fw-400: 400;
-  --fw-500: 500;
-  --fw-600: 600;
+  --font-weight-300: 300;
+  --font-weight-400: 400;
+  --font-weight-500: 500;
+  --font-weight-600: 600;
 
   /**
    * shadow
@@ -146,17 +146,11 @@ a::selection {
   color: #121212;
 }
 
-.sizebox20 {
+.size-box20 {
   height: 20px;
 }
-.sizebox10 {
+.size-box10 {
   height: 10px;
-}
-.visible {
-  display: block;
-}
-.invisible {
-  display: none;
 }
 ::-webkit-scrollbar {
   width: 0.6em;
@@ -193,7 +187,7 @@ body {
   gap: 1.6rem;
   transition: var(--transition-2);
 }
-.dp {
+.defult-panel {
   background-color: #1e1e1f;
   border-radius: 20px;
   border: solid 1px #383838;
@@ -221,7 +215,7 @@ body {
   border: solid 1px #383838;
   border-top: none;
   border-right: none;
-  font-size: var(--fs-8);
+  font-size: var(--font-size-8);
   box-shadow: var(--shadow-2);
   transition: var(--transition-1);
   z-index: 1;
@@ -268,9 +262,9 @@ body {
 }
 
 .my-name {
-  font-size: var(--fs-3);
+  font-size: var(--font-size-3);
   margin-top: 23px;
-  font-weight: var(--fw-400);
+  font-weight: var(--font-weight-400);
   letter-spacing: -0.25px;
 }
 .my-position {
@@ -343,7 +337,7 @@ hr {
 .item-data p {
   text-transform: uppercase;
   color: hsla(0, 0%, 84%, 0.7);
-  font-size: var(--fs-8);
+  font-size: var(--font-size-8);
 }
 
 .social-icons {
@@ -365,7 +359,7 @@ hr {
 
 /* Right Side section  */
 
-.menubar {
+.menu-bar {
   position: absolute;
   top: 0;
   right: 0;
@@ -381,24 +375,24 @@ hr {
   align-items: center;
   z-index: 5;
 }
-.menubar ul {
+.menu-bar ul {
   margin: 30px;
   display: flex;
   justify-content: space-around;
   width: 100%;
   list-style: none;
 }
-.menubar ul li a {
+.menu-bar ul li a {
   font-weight: 500;
   color: #c0bfbf;
   float: left;
   margin-right: 10px;
 }
-.menubar ul li a:hover {
+.menu-bar ul li a:hover {
   cursor: pointer !important;
   color: #a2a2a2;
 }
-.menubar ul li a.active {
+.menu-bar ul li a.active {
   color: var(--orange-yellow-crayola);
 }
 
@@ -412,7 +406,7 @@ hr {
 .big-title {
   display: inline-block;
   margin: 15px 0px;
-  font-weight: var(--fw-600);
+  font-weight: var(--font-weight-600);
   font-size: 32px;
 }
 .dash {
@@ -463,7 +457,7 @@ hr {
   overflow: hidden;
   text-overflow: ellipsis; /* Optional: Show ellipsis (...) for overflow text */
   line-height: 1.6;
-  font-size: var(--fs-5); /* Ensure proper line height */
+  font-size: var(--font-size-5); /* Ensure proper line height */
 }
 
 /* .section {
@@ -550,8 +544,8 @@ hr {
   gap: 0.8rem;
 }
 .card-item.team .item-text {
-  font-size: var(--fs-6);
-  font-weight: var(--fw-3);
+  font-size: var(--font-size-6);
+  font-weight: var(--font-weight-3);
   line-height: 1.6;
   max-height: 5em; /* Adjust the value as needed */
   overflow: hidden;
@@ -647,7 +641,7 @@ hr {
   height: 45px;
 }
 .resume-section-title {
-  font-size: var(--fs-1);
+  font-size: var(--font-size-1);
 }
 
 .resume-section-list {
@@ -718,14 +712,14 @@ hr {
   font-size: 14px;
 }
 
-.Skills-progress-list-item {
+.skills-progress-list-item {
   margin-block: 20px;
 }
-.Skills-progress-list-item p {
+.skills-progress-list-item p {
   margin-bottom: 10px;
   font-weight: 600;
 }
-.Skills-progress-list-item p span {
+.skills-progress-list-item p span {
   font-weight: 300;
 }
 
@@ -810,8 +804,8 @@ hr {
 }
 .card-blog-details .card-blog-text {
   color: var(--light-gray);
-  font-size: var(--fs-6);
-  font-weight: var(--fw-300);
+  font-size: var(--font-size-6);
+  font-weight: var(--font-weight-300);
   line-height: 1.6;
 }
 
@@ -916,8 +910,8 @@ hr {
 }
 .card-item-port-title {
   color: var(--white-2);
-  font-size: var(--fs-5);
-  font-weight: var(--fw-400);
+  font-size: var(--font-size-5);
+  font-weight: var(--font-weight-400);
   text-transform: capitalize;
   line-height: 1.3;
 }
@@ -996,7 +990,7 @@ hr {
 }
 .send-btn p {
   color: var(--orange-yellow-crayola);
-  font-size: var(--fs-5);
+  font-size: var(--font-size-5);
 }
 
 @media (max-width: 1240px) {
@@ -1080,10 +1074,8 @@ hr {
   .left-side {
     padding-top: 10px;
   }
-  .menubar {
+  .menu-bar {
     width: 55%;
-  }
-  .section-list.services {
   }
 
   .what-i-do .section-title {
@@ -1126,17 +1118,17 @@ hr {
 
   /* Right side section */
 
-  .menubar {
+  .menu-bar {
     position: fixed;
     top: auto;
     bottom: 0;
     width: 100%;
     border-radius: 12px 12px 0 0;
   }
-  .menubar ul {
+  .menu-bar ul {
     width: 50%;
   }
-  .menubar ul li a {
+  .menu-bar ul li a {
     font-size: 14px;
     font-weight: 500;
   }
@@ -1204,13 +1196,13 @@ hr {
     height: 70px;
     background: red;
   } */
-  .menubar {
+  .menu-bar {
     position: fixed !important;
   }
   .left-side {
     padding-top: 10px;
   }
-  .menubar ul li a {
+  .menu-bar ul li a {
     font-size: 11px;
     font-weight: 400;
   }
@@ -1218,7 +1210,7 @@ hr {
     display: flex;
   }
   .section-title {
-    font-size: var(--fs-2);
+    font-size: var(--font-size-2);
   }
   .item-icon {
     padding: 10px;
@@ -1340,7 +1332,7 @@ hr {
   .my-name {
     padding-bottom: 8px;
     font-weight: 500;
-    font-size: var(--fs-2);
+    font-size: var(--font-size-2);
   }
   .right-side .big-title {
     font-size: 24px;
@@ -1355,8 +1347,7 @@ hr {
     max-width: 470px;
     gap: 1rem;
   }
-  .section-list.services {
-  }
+
   .card-item.services {
     flex-direction: column;
     justify-content: center;
@@ -1366,8 +1357,8 @@ hr {
   }
   .card-item.services .item-text {
     text-align: center;
-    font-size: var(--fs-6);
-    font-weight: var(--fw-3);
+    font-size: var(--font-size-6);
+    font-weight: var(--font-weight-3);
     line-height: 1.6;
   }
   .card-item.services .card-item-title {
@@ -1407,10 +1398,10 @@ hr {
     gap: 5px;
   }
   .resume-section-name h3 {
-    font-size: var(--fs-2);
+    font-size: var(--font-size-2);
   }
   .resume-list-item-title {
-    font-size: var(--fs-5);
+    font-size: var(--font-size-5);
   }
 
   .resume-list-item::before {
@@ -1422,7 +1413,7 @@ hr {
     top: -25px;
   }
 
-  .Skills-progress-list-item {
+  .skills-progress-list-item {
     margin-block: 10px;
   }
   .skills-progress-box .item-icon {
