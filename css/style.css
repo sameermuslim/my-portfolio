@@ -1289,6 +1289,16 @@ hr {
   }
 
   /* section protfolio 1020 */
+  .category-list {
+    display: flex;
+    gap: 1rem;
+    margin-block: 10px;
+  }
+  .category-list .category-li-btn {
+    color: white;
+    font-size: 10px;
+  }
+
   .section-list.projects {
     grid-template-columns: 1fr;
     gap: 2rem;
