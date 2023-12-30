@@ -145,6 +145,7 @@ a::selection {
   background-color: #ffdc70; /* Change the background color of the selected text */
   color: #121212;
 }
+
 .sizebox20 {
   height: 20px;
 }
@@ -612,6 +613,23 @@ hr {
   justify-content: flex-start;
   gap: 30px;
 }
+.add-sign {
+  font-weight: 300;
+  margin-inline: 5px;
+}
+.companeis-link {
+  color: var(--orange-yellow-crayola);
+  font-weight: 400;
+  text-decoration: underline;
+}
+.companeis-link.no-link {
+  text-decoration: none;
+}
+.forward-selash {
+  margin-inline: 5px;
+  font-weight: 100;
+  color: rgba(255, 255, 255, 0.451);
+}
 .resume-section-icon {
   width: 45px;
   height: 45px;
@@ -640,6 +658,7 @@ hr {
   padding-left: 80px;
 }
 .resume-section-list .resume-section-date {
+  font-size: 14px;
   color: #ceb15a;
   margin-block: 5px 10px;
 }
