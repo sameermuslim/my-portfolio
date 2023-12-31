@@ -368,7 +368,7 @@ hr {
   width: 60%;
   height: 60px;
   background: hsla(240, 1%, 17%, 0.75);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(30px);
   border: 1px solid var(--jet);
   border-radius: 0px 12px;
   box-shadow: var(--shadow-2);
@@ -1379,7 +1379,7 @@ hr {
   }
   .main-container {
     margin: 25px auto;
-    max-width: 470px;
+    max-width: 460px;
     gap: 1rem;
   }
 
