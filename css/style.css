@@ -576,8 +576,14 @@ hr {
 }
 .clients .section-list {
   height: fit-content;
-  grid-auto-columns: 25%;
-  gap: 20px;
+  grid-auto-columns: 18%;
+  gap: 10px;
+}
+
+.clients .horizontal li:first-child a img {
+  padding-left: 70px;
+  height: 70px;
+  padding-top: 15px;
 }
 .clients .horizontal {
   padding-bottom: 30px;
@@ -588,14 +594,14 @@ hr {
   align-items: center;
 }
 .clients .horizontal li a img {
-  width: 80px;
+  /* width: 80px; */
   height: 80px;
   filter: grayscale(1);
   transition: 0.5s ease;
 }
 
 .clients .horizontal li a img:hover {
-  width: 120px;
+  /* width: 120px; */
   filter: grayscale(0);
 }
 
