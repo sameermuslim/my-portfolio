@@ -75,7 +75,7 @@ git clone https://github.com/sameermuslim/my-portfolio.git
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-I Will add these section in my portfolio next version:
+I Will add these section in my portfolio's next version:
 
 - [ ] **[Blogs]**
 
@@ -85,7 +85,7 @@ I Will add these section in my portfolio next version:
 
 ## 🤝 Contributing <a name="contributing"></a>
 
-CFeel free to contribute, report issues, or suggest new features! Your input is highly valued and appreciated.
+Feel free to contribute, report issues, or suggest new features! Your input is highly valued and appreciated.
 
 Feel free to check the [issues page](../../issues/).
 
