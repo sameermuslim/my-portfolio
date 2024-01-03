@@ -53,7 +53,9 @@
               </div>
               <div class="item-data">
                 <p class="contact-name">email</p>
-                <a class="contact-data">sameer@example.com</a>
+                <a href="mailto:iamsameerdiv@gmail.com" class="contact-data"
+                  >iamsameerdiv@gmail.com</a
+                >
               </div>
             </li>
             <!-- list item  -->
@@ -64,7 +66,7 @@
               </div>
               <div class="item-data">
                 <p class="contact-name">Phone</p>
-                <a class="contact-data">+93797273715</a>
+                <a href="tel:+93797273715" class="contact-data">+93797273715</a>
               </div>
             </li>
             <!-- list item  -->
@@ -75,7 +77,9 @@
               </div>
               <div class="item-data">
                 <p class="contact-name">Birthdate</p>
-                <a class="contact-data">1997,07,07</a>
+                <time datetime="1996-07-07" class="contact-data"
+                  >July 7, 1996</time
+                >
               </div>
             </li>
             <!-- list item  -->
@@ -86,7 +90,9 @@
               </div>
               <div class="item-data">
                 <p class="contact-name">Location</p>
-                <a class="contact-data">Mazar-i-Sharif, Afghanistan</a>
+                <address class="contact-data">
+                  Mazar-i-Sharif, Afghanistan
+                </address>
               </div>
             </li>
           </ul>
@@ -223,7 +229,7 @@
                   <div class="card-item team">
                     <div class="team-info min-test">
                       <div class="photo">
-                        <img src="images/my-avatar.png" alt="" />
+                        <img src="images/Rod.png" alt="" />
                       </div>
                       <h3 class="card-item-title">Rod A. McLeod</h3>
                     </div>
@@ -244,7 +250,7 @@
                   <div class="card-item team">
                     <div class="team-info min-test">
                       <div class="photo">
-                        <img src="images/avatar-2.png" alt="" />
+                        <img src="images/nancy-avatar.png" alt="" />
                       </div>
                       <h3 class="card-item-title">Nancy Speidel</h3>
                     </div>
@@ -264,7 +270,7 @@
                   <div class="card-item team">
                     <div class="team-info min-test">
                       <div class="photo">
-                        <img src="images/my-avatar.png" alt="" />
+                        <img src="images/Niyaz-avatar.png" alt="" />
                       </div>
                       <h3 class="card-item-title">Niyaz M. Khairy</h3>
                     </div>
@@ -422,7 +428,7 @@
                     class="add-sign"
                     >@</span
                   >
-                  <a href="" class="companeis-link no-link"> Coursera</a>
+                  <a class="companeis-link no-link"> Coursera</a>
                 </h4>
                 <p class="resume-section-date">
                   Oct 2023 <span class="forward-selash">//</span> Online
@@ -643,9 +649,7 @@
                 <h4 class="resume-list-item-title">
                   IT Technician
                   <span class="add-sign">@</span>
-                  <a href="" class="companeis-link no-link">
-                    Network Zone ISP</a
-                  >
+                  <a class="companeis-link no-link"> Network Zone ISP</a>
                 </h4>
                 <p class="resume-section-date">
                   Jan 2019 - Des 2020
@@ -725,9 +729,7 @@
                 <h4 class="resume-list-item-title">
                   Co-founder and Editor in chief
                   <span class="add-sign">@</span>
-                  <a href="" class="companeis-link no-link">
-                    Zerone E-Magazine</a
-                  >
+                  <a class="companeis-link no-link"> Zerone E-Magazine</a>
                 </h4>
                 <p class="resume-section-date">
                   Jul 2017 - Sep 2019
@@ -1263,24 +1265,34 @@
             <div class="map-box">
               <iframe
                 class="map-container"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10843.015230922823!2d67.09633910926973!3d36.70338304949796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f34b8a3605314bd%3A0xb27a5e1a6c1fcf71!2sMazar-i-Sharif%2C%20Afghanistan!5e0!3m2!1sen!2s!4v1703792422375!5m2!1sen!2s"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d18301.937956932157!2d67.11375233052213!3d36.71107776030838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1704266137782!5m2!1sen!2s"
                 frameborder="0"
+                style="border: none"
               ></iframe>
             </div>
             <h1 class="contact-big-title">Contact Form</h1>
             <div class="contact-input-box">
-              <form name="contact-form" id="contact-form" action="submit">
+              <form method="POST" id="form" name="contact-form">
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value="1522fab6-b445-4eff-aa73-f60a3ecb9379"
+                />
                 <input
                   class="input input-name"
                   type="text"
-                  name="Name"
+                  name="name"
+                  id="name"
                   placeholder="Full name"
+                  required
                 />
                 <input
                   class="input input-email"
                   type="email"
                   name="email"
+                  id="email"
                   placeholder="Email"
+                  required
                 />
 
                 <textarea
@@ -1290,13 +1302,19 @@
                   cols="30"
                   rows="5"
                   placeholder="Your Message"
+                  required
                 ></textarea>
+                <button type="submit" class="send-btn item-icon">
+                  <img src="images/send.svg" alt="" />
+                  <p>Send Message</p>
+                </button>
+                <div
+                  class="loading-text"
+                  style="color: #f5d26b; transition: 0.5s ease-in-out"
+                  id="result"
+                ></div>
               </form>
             </div>
-            <a class="send-btn item-icon">
-              <img src="images/send.svg" alt="" />
-              <p>Send Message</p>
-            </a>
           </div>
         </article>
       </main>
