@@ -443,7 +443,7 @@ address {
   display: flex;
   justify-content: flex-start;
   padding: 20px 30px;
-  max-height: 170px;
+  height: 140px;
   gap: 20px;
   z-index: 1;
 }
@@ -491,7 +491,7 @@ address {
   display: grid;
   grid-template-columns: repeat(2, 48%);
   grid-template-rows: 46%;
-  gap: 1rem;
+  gap: 1.4rem;
   height: fit-content;
 }
 .card-item.services .card-item-title {
@@ -933,6 +933,10 @@ address {
   font-size: var(--font-size-6);
   font-weight: var(--font-weight-300);
   line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* start portfolio section  */
@@ -1085,6 +1089,20 @@ address {
 .input-email {
   grid-column: 3/5;
 }
+a:hover::after {
+  content: attr(data-description);
+  display: block;
+  position: absolute;
+  background-color: var(--jet);
+  border: 1px solid #9e9c9cb7;
+  padding: 3px;
+  right: 0px;
+  top: 0px;
+  border-radius: 5px;
+  margin-top: 20px;
+  z-index: 1;
+  transition: opacity 12s ease-in 12s;
+}
 .input {
   background: transparent;
   color: white;
@@ -1142,19 +1160,27 @@ address {
     /* background: red; */
   }
   .info,
-  hr {
-    scale: 0;
+  hr,
+  .social-icons {
+    display: none;
   }
   .left-side.active .info,
-  .left-side.active hr {
-    scale: 1;
+  .left-side.active hr,
+  .left-side.active .social-icons {
+    display: block;
+  }
+  .left-side .profile {
+    padding: 0px;
+    margin-bottom: 0px;
+  }
+  #hr1 {
+    margin-top: 20px;
   }
   .show-contacts-btn {
     display: block;
   }
   .left-side {
     position: relative;
-    height: 175px;
     top: 0px;
   }
   .left-side.active {
@@ -1206,9 +1232,6 @@ address {
     display: grid;
     grid-template-columns: 48% 48%;
     gap: 1rem;
-  }
-  .left-side {
-    padding-top: 10px;
   }
   .menu-bar {
     width: 55%;
@@ -1275,7 +1298,9 @@ address {
   .right-side .big-title {
     margin: 15px 0;
   }
-
+  .card-item.services {
+    height: fit-content;
+  }
   .section-list.services {
     display: flex;
     flex-direction: column;
@@ -1309,6 +1334,9 @@ address {
     width: 80px;
     height: 80px;
   }
+  .card-blog-details .card-blog-text {
+    -webkit-line-clamp: 2;
+  }
   /* .section-list {
     grid-template-rows: 30%;
     grid-template-columns: 100%;
@@ -1322,6 +1350,9 @@ address {
   }
   .main-container {
     max-width: 520px;
+  }
+  .card-item {
+    height: fit-content;
   }
 
   .dialog-profile {
@@ -1369,9 +1400,7 @@ address {
   .menu-bar {
     position: fixed !important;
   }
-  .left-side {
-    padding-top: 10px;
-  }
+
   .menu-bar ul li a {
     font-size: 11px;
     font-weight: 400;
@@ -1459,6 +1488,9 @@ address {
     grid-template-columns: 100%;
   }
 
+  .card-blog-details .card-blog-text {
+    -webkit-line-clamp: 3;
+  }
   /* start of contact section 770 */
   .map-box {
     height: 250px;
@@ -1491,15 +1523,9 @@ address {
   .right-side {
     padding: 15px;
   }
-  .left-side {
-    height: 110px;
-  }
+
   .right-side {
     padding-bottom: 35px;
-  }
-  .profile {
-    padding: 0px;
-    margin-bottom: 20px;
   }
 
   .dialog-imgs {
