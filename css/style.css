@@ -1089,7 +1089,7 @@ address {
 .input-email {
   grid-column: 3/5;
 }
-a:hover::after {
+/* a:hover::after {
   content: attr(data-description);
   display: block;
   position: absolute;
@@ -1102,7 +1102,7 @@ a:hover::after {
   margin-top: 20px;
   z-index: 1;
   transition: opacity 12s ease-in 12s;
-}
+} */
 .input {
   background: transparent;
   color: white;
