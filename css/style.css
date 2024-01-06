@@ -1085,18 +1085,29 @@ address {
 } */
 
 .card-item-portfolio .card-item-port-text,
-.card-item-port-title {
+.card-item-port-title,
+.card-item-port-description {
   margin-inline: 10px;
 }
 .card-item-port-title {
-  color: var(--white-2);
+  color: var(--orange-yellow-crayola);
   font-size: var(--font-size-5);
   font-weight: var(--font-weight-400);
   text-transform: capitalize;
   line-height: 1.3;
+  margin-block: 5px 3px;
 }
 .card-item-port-text {
+  color: #e8e6e6;
+  font-size: 14px;
+}
+
+.card-item-port-description {
   color: #757474;
+  font-size: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 /* start of Contact section */
