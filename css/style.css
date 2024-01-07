@@ -344,6 +344,7 @@ body {
   transition: var(--transition-1);
 }
 
+/*  */
 .show-contacts-btn:hover,
 .show-contacts-btn.active {
   background: var(--bg-gradient-onyx);
