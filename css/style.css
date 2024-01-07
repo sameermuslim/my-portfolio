@@ -43,7 +43,8 @@
   --jet: hsl(0, 0%, 22%);
   --onyx: hsl(240, 1%, 17%);
   --eerie-black-1: hsl(240, 2%, 13%);
-  --eerie-black-2: hsl(240, 2%, 12%);
+  --eerie-black-2: #1e1e1f;
+  --overlay-background: hsl(0, 0%, 5%);
   --smoky-black: hsl(0, 0%, 7%);
   --white-1: hsl(0, 0%, 100%);
   --white-2: hsl(0, 0%, 98%);
@@ -142,8 +143,8 @@ span::selection,
 input::selection,
 textarea::selection,
 a::selection {
-  background-color: #ffdc70; /* Change the background color of the selected text */
-  color: #121212;
+  background: #ffdc70; /* Change the background color of the selected text */
+  color: var(--smoky-black);
 }
 
 .size-box20 {
@@ -158,26 +159,26 @@ a::selection {
 }
 
 ::-webkit-scrollbar-track {
-  background: #121212;
+  background: var(--smoky-black);
   border-radius: 100vw;
   border-radius: 100dvw;
   margin-block: 0.5em;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #28282a;
-  border: 0.05em solid #757474;
+  background: var(--bg-gradient-onyx);
+  border: 0.05em solid var(--light-gray-70);
   border-radius: 100vw;
   border-radius: 100dvw;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #111111;
+  background: var(--smoky-black);
 }
 
 body {
-  background-color: #121212;
-  color: white;
+  background: var(--smoky-black);
+  color: var(--white-2);
   font-family: "Poppins", sans-serif;
 }
 
@@ -190,9 +191,9 @@ body {
   transition: var(--transition-2);
 }
 .defult-panel {
-  background-color: #1e1e1f;
+  background: var(--eerie-black-2);
   border-radius: 20px;
-  border: solid 1px #383838;
+  border: solid 1px var(--jet);
 }
 
 .left-side {
@@ -207,14 +208,13 @@ body {
 
 .show-contacts-btn {
   display: none;
-  background: #2f2f3140;
+  background: var(--border-gradient-onyx);
   position: absolute;
   top: 0px;
   right: 0px;
   padding: 10px 15px;
-  border-bottom-left-radius: inherit;
-  border-top-right-radius: inherit;
-  border: solid 1px #383838;
+  border-radius: 0 15px;
+  border: solid 1px var(--jet);
   border-top: none;
   border-right: none;
   font-size: var(--font-size-8);
@@ -251,7 +251,7 @@ body {
   margin: 10px auto;
   height: 150px;
   border-radius: 30px;
-  background-color: #39393a;
+  background: var(--bg-gradient-onyx);
   transition: var(--transition-1);
 }
 .photo img {
@@ -270,8 +270,8 @@ body {
   letter-spacing: -0.25px;
 }
 .my-position {
-  background-color: #2b2b2c;
-  color: #ffffff;
+  background: var(--onyx);
+  color: var(--white-2);
   display: inline-block;
   padding: 5px 20px;
   border-radius: 8px;
@@ -283,7 +283,7 @@ body {
 hr {
   width: 100%;
   border: none;
-  border-top: 1px solid #383838;
+  border-top: 1px solid var(--jet);
 }
 
 .contact-list {
@@ -317,7 +317,7 @@ hr {
   inset: 1px;
   width: 55px;
   height: 55px;
-  background: #232324;
+  background: var(--eerie-black-1);
   border-radius: inherit;
   z-index: -1;
   transition: var(--transition-1);
@@ -344,7 +344,7 @@ address {
 }
 .item-data p {
   text-transform: uppercase;
-  color: hsla(0, 0%, 84%, 0.7);
+  color: var(--light-gray-70);
   font-size: var(--font-size-8);
 }
 
@@ -383,24 +383,24 @@ address {
   align-items: center;
   z-index: 5;
 }
-.menu-bar ul {
+.menu-bar-ul {
   margin: 30px;
   display: flex;
   justify-content: space-around;
   width: 100%;
   list-style: none;
 }
-.menu-bar ul li a {
+.menu-bar-link {
   font-weight: 500;
-  color: #c0bfbf;
+  color: var(--light-gray);
   float: left;
   margin-right: 10px;
 }
-.menu-bar ul li a:hover {
+.menu-bar-link:hover {
   cursor: pointer !important;
-  color: #a2a2a2;
+  color: var(--light-gray-70);
 }
-.menu-bar ul li a.active {
+.menu-bar-link.active {
   color: var(--orange-yellow-crayola);
 }
 
@@ -424,7 +424,7 @@ address {
   background: var(--text-gradient-yellow);
 }
 .body-text {
-  color: #d6d6d6;
+  color: var(--light-gray);
   margin: 15px 0px;
   font-weight: 300;
   font-size: 16px;
@@ -452,7 +452,7 @@ address {
   content: "";
   position: absolute;
   inset: 1px;
-  background: #232324;
+  background: var(--bg-gradient-jet);
   border-radius: inherit;
   z-index: -1;
 }
@@ -521,7 +521,7 @@ address {
 
 .clients .section-list::-webkit-scrollbar-track,
 .test-mo::-webkit-scrollbar-track {
-  background: #2b2b2c;
+  background: var(--bg-gradient-onyx);
   border-radius: 100vw;
   border-radius: 100dvw;
   margin-inline: 8em;
@@ -608,15 +608,18 @@ address {
   position: absolute;
   right: 15px;
   top: 15px;
-  color: #b8b8b9;
-  background: #2b2b2c;
+  color: var(--light-gray-70);
+  background: var(--onyx);
   padding: 5px 12px;
   border-radius: 7px;
   z-index: 30;
+  font-weight: var(--font-weight-300);
+  opacity: 0.7;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 .dialog-close-btn:hover {
-  color: #fff;
+  color: var(--light-gray);
+  opacity: 1;
 }
 .dialog-box {
   position: relative;
@@ -645,7 +648,7 @@ address {
   /* margin: 10px auto; */
   height: 85px;
   border-radius: 20px;
-  background-color: #39393a;
+  background: var(--bg-gradient-onyx);
   transition: var(--transition-1);
 }
 .dialog-person-img {
@@ -662,7 +665,7 @@ address {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: hsl(0, 0%, 5%);
+  background: var(--overlay-background);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -747,12 +750,12 @@ address {
 }
 .hash-tag {
   font-weight: 100;
-  color: rgba(255, 255, 255, 0.451);
+  color: var(--light-gray-70);
 }
 .forward-selash {
   margin-inline: 5px;
   font-weight: 100;
-  color: rgba(255, 255, 255, 0.451);
+  color: var(--light-gray-70);
 }
 .resume-section-icon {
   width: 45px;
@@ -783,8 +786,7 @@ address {
 }
 .resume-section-list .resume-section-date {
   font-size: 14px;
-
-  color: #ceb15a;
+  color: var(--vegas-gold);
   margin-block: 0px 10px;
 }
 /* li  */
@@ -798,9 +800,9 @@ address {
   width: 15px;
   left: -64px;
   top: 2px;
-  background-color: #ffce68;
+  background: var(--text-gradient-yellow);
   border-radius: 50%;
-  border: 3px solid #383838;
+  border: 3px solid var(--jet);
   position: absolute;
   z-index: 3;
 }
@@ -815,7 +817,7 @@ address {
 .volunteer-date {
   font-size: 20px;
   font-weight: 500;
-  color: #ceb15a;
+  color: var(--orange-yellow-crayola);
 }
 
 .resume-list-item:not(:last-child)::after {
@@ -824,24 +826,24 @@ address {
   width: 1px;
   left: -57px;
   top: -25px;
-  background-color: #383838;
+  background: var(--jet);
   position: absolute;
 }
 
 .resume-list-item .resume-about-organization {
-  color: rgba(255, 255, 255, 0.896);
+  color: var(--light-gray);
   font-size: 16px;
   font-weight: 300;
 }
 .resume-section-list p {
-  color: rgba(255, 255, 255, 0.753);
+  color: var(--light-gray-70);
   margin-block: 10px;
 }
 .resume-section-list ul li {
   margin-block: 5px;
   line-height: 1.5;
   font-weight: 300;
-  color: rgb(214, 214, 214);
+  color: var(--light-gray);
 }
 .resume-responsibilities-list {
   margin-left: 20px;
@@ -869,7 +871,7 @@ address {
   width: fit-content;
   border-radius: 7px;
   text-transform: capitalize;
-  color: #ddd4d4;
+  color: var(--light-gray);
 }
 
 .skills-progress-list-item {
@@ -903,7 +905,7 @@ address {
   inset: 1px;
   width: 100%;
   height: 100%;
-  background: #232324;
+  background: var(--bg-gradient-jet);
   border-radius: inherit;
   z-index: -1;
   transition: var(--transition-1);
@@ -935,7 +937,7 @@ address {
 }
 
 .card-item-blog {
-  background-color: #212122;
+  background: var(--bg-gradient-jet);
   overflow: hidden;
   border-radius: 16px;
   box-shadow: var(--shadow-4);
@@ -953,21 +955,21 @@ address {
   transform: scale(1.1);
 }
 .card-item-blog:hover .card-blog-big-title {
-  color: hsl(45, 100%, 72%);
+  color: var(--orange-yellow-crayola);
 }
 .card-blog-category-and-date {
   display: flex;
   align-items: center;
 }
 .card-blog-category-and-date p {
-  color: #a0a0a0;
+  color: var(--light-gray-70);
 }
 .card-blog-category-and-date .dot {
-  width: 5px;
-  height: 5px;
+  width: 4px;
+  height: 4px;
   font-weight: 100;
   border-radius: 50%;
-  background: #a0a0a0;
+  background: var(--light-gray-70);
   text-align: center;
   margin-inline: 5px;
 }
@@ -976,7 +978,7 @@ address {
 }
 .card-blog-details .card-blog-big-title {
   margin-block: 15px;
-  color: white;
+  color: var(--white-1);
 }
 .card-blog-details .card-blog-text {
   color: var(--light-gray);
@@ -997,12 +999,12 @@ address {
   margin-block: 25px;
 }
 .category-list .category-li-btn {
-  color: white;
+  color: var(--white-1);
   font-size: 14px;
 }
 
 .category-li-btn.active {
-  color: #fab44c;
+  color: var(--orange-yellow-crayola);
 }
 
 .section-list.projects {
@@ -1015,7 +1017,7 @@ address {
 .card-item-portfolio {
   border-radius: 15px;
   overflow: hidden;
-  color: white;
+  color: var(--white-1);
 }
 
 .card-item-portfolio:hover .bunner-preview {
@@ -1071,9 +1073,8 @@ address {
   height: 50px;
   padding: 10;
   z-index: 5;
-
   border-radius: 8px;
-  background: #383838;
+  background: var(--jet);
 }
 
 /* .card-port-bunner-preview {
@@ -1098,12 +1099,12 @@ address {
   margin-block: 5px 3px;
 }
 .card-item-port-text {
-  color: #e8e6e6;
+  color: var(--light-gray);
   font-size: 14px;
 }
 
 .card-item-port-description {
-  color: #757474;
+  color: var(--light-gray-70);
   font-size: 12px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -1118,7 +1119,7 @@ address {
   overflow: hidden;
   height: 420px;
   border-radius: 15px;
-  /* background-color: red; */
+  /* background: red; */
   filter: grayscale(1) invert(1);
   border: 1px solid var(--jet);
 }
@@ -1154,7 +1155,7 @@ address {
   content: attr(data-description);
   display: block;
   position: absolute;
-  background-color: var(--jet);
+  background: var(--jet);
   border: 1px solid #9e9c9cb7;
   padding: 3px;
   right: 0px;
@@ -1186,8 +1187,6 @@ address {
   align-items: center;
   border-radius: 10px;
   padding: 10px 15px 10px 0px;
-  border: 1px solid #2e2c2c;
-
   margin-block: 15px;
   border-bottom-left-radius: none;
   box-shadow: var(--shadow-3);
@@ -1348,10 +1347,10 @@ address {
     width: 100%;
     border-radius: 12px 12px 0 0;
   }
-  .menu-bar ul {
+  .menu-bar-ul {
     width: 50%;
   }
-  .menu-bar ul li a {
+  .menu-bar-link {
     font-size: 14px;
     font-weight: 500;
   }
@@ -1438,7 +1437,6 @@ address {
 
   .clients .section-list::-webkit-scrollbar-track,
   .test-mo::-webkit-scrollbar-track {
-    background: #2b2b2c;
     border-radius: 100vw;
     border-radius: 100dvw;
     margin-inline: 8em;
@@ -1466,7 +1464,7 @@ address {
     position: fixed !important;
   }
 
-  .menu-bar ul li a {
+  .menu-bar .menu-bar-link {
     font-size: 11px;
     font-weight: 400;
   }
@@ -1537,7 +1535,6 @@ address {
   .volunteer-date {
     font-size: 18px;
     font-weight: 500;
-    color: #ceb15a;
   }
 
   .skills-progress-box .item-icon {
@@ -1588,7 +1585,6 @@ address {
   .send-btn img {
     width: 45px;
     height: 45px;
-    filter: #ffdc7090;
   }
   .send-btn {
     position: relative;
