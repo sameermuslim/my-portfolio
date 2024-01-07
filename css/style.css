@@ -44,15 +44,21 @@
   --onyx: hsl(240, 1%, 17%);
   --eerie-black-1: hsl(240, 2%, 13%);
   --eerie-black-2: #1e1e1f;
+  --menu-bar-gb: hsla(240, 1%, 17%, 0.75);
   --overlay-background: hsl(0, 0%, 5%);
   --smoky-black: hsl(0, 0%, 7%);
   --white-1: hsl(0, 0%, 100%);
   --white-2: hsl(0, 0%, 98%);
   --orange-yellow-crayola: hsl(45, 100%, 72%);
+  --title-orange-yellow-crayola: hsl(45, 100%, 72%);
+
+  --text-orange-yellow-crayola: hsl(45, 100%, 72%);
+  --nav-link-active: hsl(45, 100%, 72%);
   --vegas-gold: hsl(45, 54%, 58%);
   --light-gray: hsl(0, 0%, 84%);
   --light-gray-70: hsla(0, 0%, 84%, 0.7);
   --bittersweet-shimmer: hsl(0, 43%, 51%);
+  --icon-color: #fcc05e;
 
   /**
    * typography
@@ -95,6 +101,110 @@
   --transition-2: 0.5s ease-in-out;
 }
 
+.light-mode {
+  --jet: #ffcd6b;
+  --eerie-black-2: #fff9ef;
+  --onyx: #f4ebdbdb;
+  --icon-color: #efa125;
+  --light-gray: #403f3f;
+  --light-gray-70: #6d6b6b;
+  --bg-gradient-jet: #f4ebdb;
+  --text-orange-yellow-crayola: #6d6b6b;
+  --title-orange-yellow-crayola: #efa125;
+
+  --smoky-black: #ffffff;
+  --white-1: hsl(0, 2%, 10%);
+  --white-2: hsl(0, 1%, 20%);
+  --eerie-black-1: #f0e3ce;
+
+  --bg-gradient-onyx: linear-gradient(
+    to bottom right,
+    hsl(36, 46%, 75%) 3%,
+    hsl(50, 43%, 68%) 97%
+  );
+
+  --bg-gradient-yellow-1: linear-gradient(
+    to bottom right,
+    hsl(45, 100%, 71%) 0%,
+    hsla(36, 100%, 69%, 0) 50%
+  );
+  --bg-gradient-yellow-2: linear-gradient(
+      135deg,
+      hsla(45, 100%, 71%, 0.251) 0%,
+      hsla(35, 100%, 68%, 0) 59.86%
+    ),
+    hsl(240, 2%, 13%);
+  --border-gradient-onyx: linear-gradient(
+    to bottom right,
+    #d7c596,
+    hsla(0, 0%, 25%, 0) 50%
+  );
+  color: black;
+  --nav-link-active: #000;
+}
+
+/* .light-mode {
+  --bg-gradient-onyx: linear-gradient(
+    to bottom right,
+    hsl(240, 1%, 75%) 3%,
+    hsl(0, 0%, 81%) 97%
+  );
+
+  --bg-gradient-jet: linear-gradient(
+      to bottom right,
+      hsla(240, 1%, 82%, 0.251) 0%,
+      hsla(240, 2%, 79%, 0) 100%
+    ),
+    hsl(240, 2%, 83%);
+
+  --bg-gradient-yellow-1: linear-gradient(
+    to bottom right,
+    hsl(60, 0%, 40%) 0%,
+    hsla(36, 100%, 89%, 0) 50%
+  );
+
+  --bg-gradient-yellow-2: linear-gradient(
+      135deg,
+      hsla(45, 100%, 91%, 0.251) 0%,
+      hsla(35, 100%, 88%, 0) 59.86%
+    ),
+    hsl(240, 2%, 83%);
+
+  --border-gradient-onyx: linear-gradient(
+    to bottom right,
+    hsl(0, 0%, 75%) 0%,
+    hsla(0, 0%, 75%, 0) 50%
+  );
+
+  --text-gradient-yellow: linear-gradient(
+    to right,
+    hsl(45, 2%, 44%),
+    hsl(0, 1%, 27%)
+  ); */
+
+/* Solid Colors */
+
+/* --jet: hsl(0, 0%, 78%);
+  --onyx: hsl(240, 1%, 73%);
+  --eerie-black-1: hsl(240, 2%, 83%);
+  --eerie-black-2: hsl(0, 0%, 93%); Adjusted light color
+  --overlay-background: hsl(0, 0%, 95%); Adjusted light color
+  --smoky-black: #fff; Adjusted light color
+  --white-1: hsl(0, 0%, 0%);
+  --white-2: hsl(0, 0%, 2%);
+  --orange-yellow-crayola: hsl(45, 2%, 38%);
+  --vegas-gold: hsl(45, 2%, 49%);
+  --light-gray: #2b2a2a; Adjusted light color
+  --light-gray-70: hsla(0, 0%, 16%, 0.7); Adjusted light color
+  --bittersweet-shimmer: hsl(0, 43%, 61%); Adjusted light color
+  --icon-color: linear-gradient(to right, hsl(45, 2%, 44%), hsl(0, 1%, 27%));
+  --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.1); Adjusted light shadow
+  --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.1); Adjusted light shadow
+  --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.1); Adjusted light shadow
+  --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.05); Adjusted light shadow
+  --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.1); Adjusted light shadow
+} */
+
 /*-----------------------------------*\
   #RESET
 \*-----------------------------------*/
@@ -128,7 +238,7 @@ button {
   padding: 0;
 }
 p {
-  color: hsl(0, 0%, 84%);
+  color: var(--light-gray);
 }
 
 p::selection,
@@ -143,7 +253,8 @@ span::selection,
 input::selection,
 textarea::selection,
 a::selection {
-  background: #ffdc70; /* Change the background color of the selected text */
+  background: var(--orange-yellow-crayola);
+  /* Change the background color of the selected text */
   color: var(--smoky-black);
 }
 
@@ -218,11 +329,11 @@ body {
   border-top: none;
   border-right: none;
   font-size: var(--font-size-8);
-  box-shadow: var(--shadow-2);
+  box-shadow: var(--shadow-4);
   transition: var(--transition-1);
   z-index: 1;
   p {
-    color: var(--orange-yellow-crayola);
+    color: var(--text-orange-yellow-crayola);
     letter-spacing: 0.5px;
   }
 }
@@ -235,7 +346,7 @@ body {
 
 .show-contacts-btn:hover,
 .show-contacts-btn.active {
-  background: var(--bg-gradient-yellow-2);
+  background: var(--bg-gradient-onyx);
 }
 .profile {
   padding: 20px 0;
@@ -337,7 +448,7 @@ hr {
   padding-top: 15px;
 }
 .contact-data {
-  color: white;
+  color: var(--white-1);
 }
 address {
   font-style: normal;
@@ -353,7 +464,7 @@ address {
   text-align: center;
   margin-top: 20px;
 }
-.social-icons img {
+.social-icons svg {
   width: 20px;
   margin-inline: 2px;
 }
@@ -373,14 +484,15 @@ address {
   right: 0;
   width: 60%;
   height: 60px;
-  background: hsla(240, 1%, 17%, 0.75);
+  background: var(--bg-gradient-onyx);
   backdrop-filter: blur(30px);
   border: 1px solid var(--jet);
   border-radius: 0px 12px;
-  box-shadow: var(--shadow-2);
+  box-shadow: var(--shadow-1);
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0.97;
   z-index: 5;
 }
 .menu-bar-ul {
@@ -392,16 +504,16 @@ address {
 }
 .menu-bar-link {
   font-weight: 500;
-  color: var(--light-gray);
+  color: var(--light-gray-70);
   float: left;
   margin-right: 10px;
 }
 .menu-bar-link:hover {
   cursor: pointer !important;
-  color: var(--light-gray-70);
+  color: var(--light-gray);
 }
 .menu-bar-link.active {
-  color: var(--orange-yellow-crayola);
+  color: var(--nav-link-active);
 }
 
 .the-section {
@@ -498,10 +610,10 @@ address {
   display: block;
   margin-bottom: 3px;
 }
-.card-item.services img {
+.card-item.services svg {
   margin-top: 5px;
-  width: 50px;
-  height: 50px;
+  width: 140px;
+  height: fit-content;
 }
 
 /* Start Testmonials section  */
@@ -530,7 +642,7 @@ address {
 .clients .section-list::-webkit-scrollbar-thumb,
 .test-mo::-webkit-scrollbar-thumb {
   background: var(--text-gradient-yellow);
-
+  border: 0.5px solid var(--menu-bar-gb);
   border-radius: 100vw;
   border-radius: 100dvw;
 }
@@ -655,6 +767,10 @@ address {
   height: inherit;
   width: inherit;
 }
+.dialog-double-quotes {
+  height: 35px;
+  width: 35px;
+}
 .full-screen-dialog.active .dialog-box {
   transform: scale(1);
   opacity: 1;
@@ -740,7 +856,7 @@ address {
   margin-inline: 5px;
 }
 .companeis-link {
-  color: var(--orange-yellow-crayola);
+  color: var(--title-orange-yellow-crayola);
   font-weight: 400;
   text-decoration: underline;
 }
@@ -761,7 +877,7 @@ address {
   width: 45px;
   height: 45px;
 }
-.resume-section-icon img {
+.resume-section-icon svg {
   width: 22px;
   height: 22px;
   margin: 0px;
@@ -802,7 +918,7 @@ address {
   top: 2px;
   background: var(--text-gradient-yellow);
   border-radius: 50%;
-  border: 3px solid var(--jet);
+  border: 3px solid var(--eerie-black-1);
   position: absolute;
   z-index: 3;
 }
@@ -955,7 +1071,7 @@ address {
   transform: scale(1.1);
 }
 .card-item-blog:hover .card-blog-big-title {
-  color: var(--orange-yellow-crayola);
+  color: var(--title-orange-yellow-crayola);
 }
 .card-blog-category-and-date {
   display: flex;
@@ -1091,7 +1207,7 @@ address {
   margin-inline: 10px;
 }
 .card-item-port-title {
-  color: var(--orange-yellow-crayola);
+  color: var(--title-orange-yellow-crayola);
   font-size: var(--font-size-5);
   font-weight: var(--font-weight-400);
   text-transform: capitalize;
@@ -1197,13 +1313,13 @@ address {
 .item-icon.send-btn::before {
   width: inherit;
 }
-.send-btn img {
+.send-btn svg {
   width: 50px;
   height: 50px;
   filter: var(--orange-yellow-crayola);
 }
 .send-btn p {
-  color: var(--orange-yellow-crayola);
+  color: var(--text-orange-yellow-crayola);
   font-size: var(--font-size-5);
 }
 
@@ -1511,7 +1627,7 @@ address {
     gap: 15px;
   }
 
-  .resume-section-icon img {
+  .resume-section-icon svg {
     margin: 0px;
   }
 
@@ -1683,7 +1799,7 @@ address {
     width: 35px;
     height: 35px;
   }
-  .resume-section-icon img {
+  .resume-section-icon svg {
     width: 16px;
     height: 16px;
   }

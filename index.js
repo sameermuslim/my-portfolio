@@ -15,6 +15,12 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
+// Apply the light mode.
+const light_mode = document.getElementById("my-position");
+light_mode.addEventListener("click", () => {
+  document.body.classList.toggle("light-mode");
+});
+
 dialog_close_btn.addEventListener("click", dialogToggle);
 overlay_panel.addEventListener("click", dialogToggle);
 function dialogToggle() {
