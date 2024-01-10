@@ -56,7 +56,6 @@
   --white-2: hsl(0, 0%, 98%);
   --orange-yellow-crayola: hsl(45, 100%, 72%);
   --title-orange-yellow-crayola: hsl(45, 100%, 72%);
-
   --text-orange-yellow-crayola: hsl(45, 100%, 72%);
   --nav-link-active: hsl(45, 100%, 72%);
   --vegas-gold: hsl(45, 54%, 58%);
@@ -68,6 +67,7 @@
   --active-link-color: #fcc05e;
   --map-box-filter: grayscale(1) invert(1);
 
+  --ops-text-color: hsl(45, 100%, 72%);
   /**
    * typography
    */
@@ -127,6 +127,7 @@
   --white-2: hsl(0, 1%, 20%);
   --eerie-black-1: #f0e3ce;
   --map-box-filter: none;
+  --ops-text-color: #fff;
 
   --bg-gradient-onyx: linear-gradient(
     to bottom right,
@@ -136,8 +137,9 @@
 
   --bg-gradient-yellow-1: linear-gradient(
     to bottom right,
+
     hsl(45, 100%, 71%) 0%,
-    hsla(36, 100%, 69%, 0) 50%
+    hsla(36, 100%, 69%, 0) 90%
   );
   --bg-gradient-yellow-2: linear-gradient(
       135deg,
@@ -341,25 +343,47 @@ body {
 
 .show-contacts-btn {
   display: none;
-  background: var(--menu-gradient-onyx);
+  position: relative;
+  background: var(--bg-gradient-onyx);
   position: absolute;
   top: 0px;
   right: 0px;
   padding: 10px 15px;
-  border-radius: 0 15px;
-  border: solid 1px var(--jet);
-  border-top: none;
-  border-right: none;
+  border-radius: 0 14px;
+
   font-size: var(--font-size-8);
   box-shadow: var(--shadow-4);
   transition: var(--transition-1);
   z-index: 1;
   p {
-    color: var(--menu-bar-text);
+    color: var(--ops-text-color);
     letter-spacing: 0.5px;
   }
 }
+.show-contacts-btn #down-arrow {
+  display: none;
+  transform: rotate(90deg);
+  transition: var(--transition-1);
+}
 
+.show-contacts-btn::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  width: inherit;
+  height: inherit;
+  background: var(--bg-gradient-onyx);
+  border-radius: 0 14px;
+
+  z-index: -1;
+  transition: var(--transition-1);
+}
+
+/*  */
+.show-contacts-btn:hover,
+.show-contacts-btn.active {
+  background: var(--bg-gradient-yellow-1);
+}
 /* Dark mode Light mode */
 
 .mode-toggle-btn {
@@ -393,17 +417,6 @@ body {
   transition: 0.3s ease-in-out;
 }
 
-.show-contacts-btn #down-arrow {
-  display: none;
-  transform: rotate(90deg);
-  transition: var(--transition-1);
-}
-
-/*  */
-.show-contacts-btn:hover,
-.show-contacts-btn.active {
-  background: var(--bg-gradient-onyx);
-}
 .profile {
   padding: 20px 0;
   width: inherit;
@@ -492,7 +505,7 @@ hr {
 .item-icon img {
   width: 25px;
   height: 25px;
-  color: var(--bg-gradient-yellow-1);
+  /* color: var(--bg-gradient-yellow-1); */
   transition: var(--transition-1);
 }
 .item-data {
