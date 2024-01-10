@@ -15,12 +15,6 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-// Apply the light mode.
-const light_mode = document.getElementById("my-position");
-light_mode.addEventListener("click", () => {
-  document.body.classList.toggle("light-mode");
-});
-
 dialog_close_btn.addEventListener("click", dialogToggle);
 overlay_panel.addEventListener("click", dialogToggle);
 function dialogToggle() {
@@ -236,3 +230,52 @@ function submitForm() {
       console.error("There was a problem with the fetch operation:", error);
     });
 }
+
+const mode_toggle_btn = document.getElementById("mode-toggle-btn");
+const mode_btn = document.getElementById("mood-btn");
+const mode_icon = document.getElementById("mood-icon");
+
+let lightMode = localStorage.getItem("light-mode");
+
+const enableLightMode = () => {
+  // 1. Add the class to the body
+  document.body.classList.add("light-mode");
+  mode_btn.classList.add("light-mode");
+  mode_icon.src = "images/moon.svg";
+
+  // 2. Update darkMode in localStorage
+  localStorage.setItem("light-mode", "enabled");
+};
+
+const disableLightMode = () => {
+  // 1. Remove the class from the body
+  document.body.classList.remove("light-mode");
+  mode_btn.classList.remove("light-mode");
+  mode_icon.src = "images/sun.svg";
+  // 2. Update darkMode in localStorage
+  localStorage.setItem("light-mode", null);
+};
+
+// If the user already visited and enabled darkMode
+// start things off with it on
+if (lightMode === "enabled") {
+  enableLightMode();
+} else {
+  disableLightMode();
+}
+
+// When someone clicks the button
+mode_toggle_btn.addEventListener("click", () => {
+  // get their darkMode setting
+  lightMode = localStorage.getItem("light-mode");
+
+  // if it not current enabled, enable it
+  if (lightMode !== "enabled") {
+    enableLightMode();
+    console.log(lightMode + " enabled");
+    // if it has been enabled, turn it off
+  } else {
+    disableLightMode();
+    console.log(lightMode + " enabled");
+  }
+});

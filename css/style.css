@@ -32,10 +32,15 @@
     hsl(0, 0%, 25%) 0%,
     hsla(0, 0%, 25%, 0) 50%
   );
+  --menu-gradient-onyx: linear-gradient(
+    to bottom right,
+    hsl(0, 0%, 25%) 0%,
+    hsla(0, 0%, 25%, 0) 50%
+  );
   --text-gradient-yellow: linear-gradient(
     to right,
-    hsl(45, 100%, 72%),
-    hsl(35, 100%, 68%)
+    hsl(39, 93%, 69%),
+    hsl(35, 90%, 54%)
   );
 
   /* solid */
@@ -57,8 +62,10 @@
   --vegas-gold: hsl(45, 54%, 58%);
   --light-gray: hsl(0, 0%, 84%);
   --light-gray-70: hsla(0, 0%, 84%, 0.7);
+  --menu-bar-text: var(--light-gray-70);
   --bittersweet-shimmer: hsl(0, 43%, 51%);
   --icon-color: #fcc05e;
+  --active-link-color: #fcc05e;
 
   /**
    * typography
@@ -105,14 +112,16 @@
   --jet: #ffcd6b;
   --eerie-black-2: #fff9ef;
   --onyx: #f4ebdbdb;
-  --icon-color: #efa125;
+  --icon-color: #c67a01;
   --light-gray: #403f3f;
   --light-gray-70: #6d6b6b;
+  --menu-bar-text: hsl(0, 0%, 99%);
   --bg-gradient-jet: #f4ebdb;
   --text-orange-yellow-crayola: #6d6b6b;
   --title-orange-yellow-crayola: #efa125;
+  --active-link-color: #000;
 
-  --smoky-black: #ffffff;
+  --smoky-black: #f9f7f7;
   --white-1: hsl(0, 2%, 10%);
   --white-2: hsl(0, 1%, 20%);
   --eerie-black-1: #f0e3ce;
@@ -134,13 +143,24 @@
       hsla(35, 100%, 68%, 0) 59.86%
     ),
     hsl(240, 2%, 13%);
+  --menu-gradient-onyx: linear-gradient(
+    to bottom right,
+    #ebe1cb,
+    hsl(50, 43%, 68%) 97%
+  );
   --border-gradient-onyx: linear-gradient(
     to bottom right,
     #d7c596,
-    hsla(0, 0%, 25%, 0) 50%
+    #e9e9e9 50%
   );
   color: black;
   --nav-link-active: #000;
+
+  --shadow-1: 0px 4px 14px hsla(0, 0%, 0%, 0.1);
+  --shadow-2: -4px 8px 24px hsla(0, 0%, 0%, 0.1);
+  --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.1);
+  --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.05);
+  --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.1);
 }
 
 /* .light-mode {
@@ -253,9 +273,9 @@ span::selection,
 input::selection,
 textarea::selection,
 a::selection {
-  background: var(--orange-yellow-crayola);
+  background: var(--text-orange-yellow-crayola);
   /* Change the background color of the selected text */
-  color: var(--smoky-black);
+  color: var(--eerie-black-2);
 }
 
 .size-box20 {
@@ -319,7 +339,7 @@ body {
 
 .show-contacts-btn {
   display: none;
-  background: var(--border-gradient-onyx);
+  background: var(--menu-gradient-onyx);
   position: absolute;
   top: 0px;
   right: 0px;
@@ -333,9 +353,42 @@ body {
   transition: var(--transition-1);
   z-index: 1;
   p {
-    color: var(--text-orange-yellow-crayola);
+    color: var(--menu-bar-text);
     letter-spacing: 0.5px;
   }
+}
+
+/* Dark mode Light mode */
+
+.mode-toggle-btn {
+  height: 25px;
+  width: 45px;
+  overflow: hidden;
+  padding-inline: 2px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  transition: var(--transition-2);
+}
+.toggle-mode {
+  background: var(--bg-gradient-onyx);
+  display: flex;
+  border-radius: inherit;
+  justify-content: center;
+  border: 1px solid var(--jet);
+  padding: 3px;
+  transform: translateX(18px);
+  transition: var(--transition-1);
+}
+.toggle-mode img {
+  height: 13px;
+}
+
+.toggle-mode.light-mode {
+  transform: translateX(0);
+  transition: 0.3s ease-in-out;
 }
 
 .show-contacts-btn #down-arrow {
@@ -505,7 +558,7 @@ address {
 }
 .menu-bar-link {
   font-weight: 500;
-  color: var(--light-gray-70);
+  color: var(--menu-bar-text);
   float: left;
   margin-right: 10px;
 }
@@ -661,10 +714,10 @@ address {
 }
 .card-item.team {
   margin-top: 40px;
-  margin-inline: 5px;
+  margin-inline: 20px;
   text-align: start;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.1rem;
 }
 .card-item.team .item-text {
   font-size: var(--font-size-6);
@@ -917,9 +970,9 @@ address {
   width: 15px;
   left: -64px;
   top: 2px;
-  background: var(--text-gradient-yellow);
+  background: var(--icon-color);
   border-radius: 50%;
-  border: 3px solid var(--eerie-black-1);
+  border: 3px solid var(--onyx);
   position: absolute;
   z-index: 3;
 }
@@ -934,7 +987,7 @@ address {
 .volunteer-date {
   font-size: 20px;
   font-weight: 500;
-  color: var(--orange-yellow-crayola);
+  color: var(--title-orange-yellow-crayola);
 }
 
 .resume-list-item:not(:last-child)::after {
@@ -983,7 +1036,7 @@ address {
   justify-content: space-around;
 }
 .skills-item {
-  box-shadow: var(--shadow-5);
+  box-shadow: var(--shadow-1);
   padding: 5px 10px;
   width: fit-content;
   border-radius: 7px;
@@ -1058,12 +1111,13 @@ address {
   overflow: hidden;
   border-radius: 16px;
   box-shadow: var(--shadow-4);
+  padding: 8px;
 }
 .card-item-blog img {
   width: 100%;
   transition: 0.3s ease;
 }
-.the-img {
+.blog-banner {
   overflow: hidden;
   border-radius: inherit;
   height: 230px;
@@ -1121,7 +1175,7 @@ address {
 }
 
 .category-li-btn.active {
-  color: var(--orange-yellow-crayola);
+  color: var(--icon-color);
 }
 
 .section-list.projects {
@@ -1148,6 +1202,7 @@ address {
   overflow: hidden;
   margin-bottom: 10px;
   height: 200px;
+  border: 1px solid var(--jet);
   position: relative;
 }
 
@@ -1191,7 +1246,7 @@ address {
   padding: 10;
   z-index: 5;
   border-radius: 8px;
-  background: var(--jet);
+  background: var(--onyx);
 }
 
 /* .card-port-bunner-preview {
@@ -1284,7 +1339,7 @@ address {
 } */
 .input {
   background: transparent;
-  color: white;
+  color: var(--white-1);
   padding: 18px;
   font-size: 15px;
   border-radius: 13px;
@@ -1297,7 +1352,7 @@ address {
 
 .send-btn {
   cursor: pointer;
-  height: 60px;
+
   width: 180px;
   display: flex;
   justify-content: center;
@@ -1306,7 +1361,7 @@ address {
   padding: 10px 15px 10px 0px;
   margin-block: 15px;
   border-bottom-left-radius: none;
-  box-shadow: var(--shadow-3);
+  box-shadow: var(--shadow-1);
   grid-row: 4/4;
   grid-column: 4/4;
   /* cursor: not-allowed; */
@@ -1340,6 +1395,11 @@ address {
   hr,
   .social-icons {
     display: none;
+  }
+
+  .mode-toggle-btn {
+    bottom: 10px;
+    top: auto;
   }
   .left-side.active .info,
   .left-side.active hr,
@@ -1478,6 +1538,9 @@ address {
   .card-item.services {
     height: fit-content;
   }
+  .card-item.services svg {
+    width: 70px;
+  }
   .section-list.services {
     display: flex;
     flex-direction: column;
@@ -1508,7 +1571,7 @@ address {
   .card-item-blog {
     height: 400px;
   }
-  .the-img {
+  .blog-banner {
     height: 200px;
   }
   .clients .horizontal li a img {
@@ -1529,6 +1592,36 @@ address {
     /* background: blue; */
     gap: 1.2rem;
   }
+  .mode-toggle-btn {
+    height: 25px;
+    width: 45px;
+    overflow: hidden;
+    padding-inline: 2px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+  }
+  .toggle-mode {
+    background: var(--bg-gradient-onyx);
+    display: flex;
+    border-radius: inherit;
+    justify-content: center;
+    border: 1px solid var(--jet);
+    padding: 3px;
+    transform: translateX(19px);
+    transition: 0.3s ease-in-out;
+  }
+  .toggle-mode img {
+    height: 12px;
+  }
+
+  .toggle-mode.light-mode {
+    transform: translateX(0);
+    transition: 0.3s ease-in-out;
+  }
+
   .main-container {
     max-width: 520px;
   }
@@ -1604,7 +1697,7 @@ address {
     height: 40px;
     width: 40px;
   }
-  .item-icon img {
+  .item-icon svg {
     width: 20px;
     height: 20px;
   }
@@ -1614,10 +1707,16 @@ address {
   .contact-item {
     margin: 3px 0px;
   }
-  .the-img {
+  .blog-banner {
     height: 300px;
   }
-  /* start section Resume 1020 */
+
+  .card-item.services svg {
+    width: 80px;
+    height: fit-content;
+    object-fit: cover;
+  }
+  /* start sectio9n Resume 1020 */
 
   .resume-section-list {
     padding-left: 65px;
@@ -1772,7 +1871,7 @@ address {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 150px;
+    height: fit-content;
     gap: 2px;
   }
   .card-item.services .item-text {
@@ -1785,7 +1884,7 @@ address {
     display: flex;
     justify-content: center;
   }
-  .card-item.services img {
+  .card-item.services svg {
     height: 40px;
   }
   .clients .horizontal {
@@ -1846,7 +1945,7 @@ address {
   .show-contacts-btn #down-arrow {
     display: block;
   }
-  .card-item-blog .the-img {
+  .card-item-blog .blog-banner {
     height: 250px;
   }
 }
