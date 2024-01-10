@@ -66,6 +66,7 @@
   --bittersweet-shimmer: hsl(0, 43%, 51%);
   --icon-color: #fcc05e;
   --active-link-color: #fcc05e;
+  --map-box-filter: grayscale(1) invert(1);
 
   /**
    * typography
@@ -125,6 +126,7 @@
   --white-1: hsl(0, 2%, 10%);
   --white-2: hsl(0, 1%, 20%);
   --eerie-black-1: #f0e3ce;
+  --map-box-filter: none;
 
   --bg-gradient-onyx: linear-gradient(
     to bottom right,
@@ -1292,7 +1294,7 @@ address {
   height: 420px;
   border-radius: 15px;
   /* background: red; */
-  filter: grayscale(1) invert(1);
+  filter: var(--map-box-filter);
   border: 1px solid var(--jet);
 }
 .contact {
