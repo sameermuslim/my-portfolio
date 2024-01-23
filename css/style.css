@@ -265,7 +265,7 @@ p {
   color: var(--light-gray);
 }
 
-p::selection,
+/* p::selection,
 a::selection,
 h1::selection,
 h2::selection,
@@ -276,7 +276,8 @@ li::selection,
 span::selection,
 input::selection,
 textarea::selection,
-a::selection {
+a */
+::selection {
   background: var(--text-orange-yellow-crayola);
   /* Change the background color of the selected text */
   color: var(--eerie-black-2);
@@ -823,6 +824,12 @@ address {
 .dialog-person-name {
   font-size: var(--font-size-2);
   font-weight: var(--font-weight-600);
+}
+.dialog-person-position {
+  font-weight: 100;
+  font-size: small;
+  margin-top: -12px;
+  color: var(--light-gray-70);
 }
 .dialog-profile {
   width: 85px;

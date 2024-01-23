@@ -35,18 +35,25 @@ testimonialsItem.forEach(function (item) {
     dialogToggle();
     const imageSrc = item.querySelector(".photo img").src;
     const cardItemTitle = item.querySelector(".card-item-title").textContent;
+    const cardItemPosition = item.querySelector(
+      ".card-item-position"
+    ).textContent;
     const itemText = item.querySelector(".item-text").textContent;
     const itemDate = item.querySelector(".item-test-mo-date").textContent;
 
     // Get references to dialog elements
     const dialogPersonImg = document.querySelector(".dialog-person-img");
     const dialogPersonName = document.querySelector(".dialog-person-name");
+    const dialogPersonPosition = document.querySelector(
+      ".dialog-person-position"
+    );
     const dialogText = document.querySelector(".dialog-text");
     const dialogDate = document.querySelector(".dialog-date");
 
     // Set values in the dialog
     dialogPersonImg.src = imageSrc;
     dialogPersonName.textContent = cardItemTitle;
+    dialogPersonPosition.textContent = cardItemPosition;
     dialogText.textContent = itemText;
     dialogDate.textContent = itemDate;
     console.log("Clicked on:", imageSrc + cardItemTitle + itemText); // Example: Log the text content of the clicked item
