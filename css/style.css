@@ -686,8 +686,8 @@ address {
   height: fit-content;
 }
 
-/* Start Testmonials section  */
-
+/* Start Testmonials section 
+add scrollbar color */
 .snaps-inline {
   scroll-snap-type: inline mandatory;
 }
@@ -708,7 +708,6 @@ address {
   border-radius: 100dvw;
   margin-inline: 8em;
 }
-
 .clients .section-list::-webkit-scrollbar-thumb,
 .test-mo::-webkit-scrollbar-thumb {
   background: var(--text-gradient-yellow);
