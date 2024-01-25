@@ -1,90 +1,97 @@
+// Get references to elements
 const showContactsBtn = document.getElementById("show-contacts");
-const left_side = document.getElementById("left-side");
-const overlay_panel = document.getElementById("overlay");
-const dialog_panel = document.getElementById("full-screen-dialog");
-const dialog_close_btn = document.getElementById("dialog-close-btn");
+const leftSide = document.getElementById("left-side");
+const overlayPanel = document.getElementById("overlay");
+const dialogPanel = document.getElementById("full-screen-dialog");
+const dialogCloseBtn = document.getElementById("dialog-close-btn");
 
+// Close dialog on "Escape" key press
 document.addEventListener("keydown", function (event) {
   // Check if the pressed key is the "Escape" key (key code 27)
   if (event.key === "Escape" || event.keyCode === 27) {
-    if (dialog_panel && dialog_panel.classList.contains("active")) {
+    if (dialogPanel && dialogPanel.classList.contains("active")) {
       // Your code to handle the "Escape" key press goes here
-      dialog_panel.classList.remove("active");
-      overlay_panel.classList.remove("active");
+      dialogPanel.classList.remove("active");
+      overlayPanel.classList.remove("active");
     }
   }
 });
 
-dialog_close_btn.addEventListener("click", dialogToggle);
-overlay_panel.addEventListener("click", dialogToggle);
-function dialogToggle() {
-  dialog_panel.classList.toggle("active");
-  overlay_panel.classList.toggle("active");
+// Add click listeners for dialog toggle
+dialogCloseBtn.addEventListener("click", toggleDialog);
+overlayPanel.addEventListener("click", toggleDialog);
+
+function toggleDialog() {
+  dialogPanel.classList.toggle("active");
+  overlayPanel.classList.toggle("active");
 }
+
+// Toggle left side on button click
 showContactsBtn.addEventListener("click", function () {
-  left_side.classList.toggle("active");
+  leftSide.classList.toggle("active");
 });
 
-// get testimonials  items
+// Add click listeners for testimonial items
 const testimonialsItem = document.querySelectorAll(".card-item.team");
-
-// Add a click listener to each list item
 testimonialsItem.forEach(function (item) {
   item.addEventListener("click", function () {
-    // Your click event code goes here
-    dialogToggle();
-    const imageSrc = item.querySelector(".photo img").src;
-    const cardItemTitle = item.querySelector(".card-item-title").textContent;
-    const cardItemPosition = item.querySelector(
-      ".card-item-position"
-    ).textContent;
-    const itemText = item.querySelector(".item-text").textContent;
-    const itemDate = item.querySelector(".item-test-mo-date").textContent;
-
-    // Get references to dialog elements
-    const dialogPersonImg = document.querySelector(".dialog-person-img");
-    const dialogPersonName = document.querySelector(".dialog-person-name");
-    const dialogPersonPosition = document.querySelector(
-      ".dialog-person-position"
-    );
-    const dialogText = document.querySelector(".dialog-text");
-    const dialogDate = document.querySelector(".dialog-date");
-
-    // Set values in the dialog
-    dialogPersonImg.src = imageSrc;
-    dialogPersonName.textContent = cardItemTitle;
-    dialogPersonPosition.textContent = cardItemPosition;
-    dialogText.textContent = itemText;
-    dialogDate.textContent = itemDate;
-    console.log("Clicked on:", imageSrc + cardItemTitle + itemText); // Example: Log the text content of the clicked item
+    toggleDialog();
+    // Retrieve data for dialog
+    updateDialog(item);
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Get the main-container element
-  const mainContainer = document.querySelector(".main-container");
+// Function to update dialog content
+function updateDialog(item) {
+  const imageSrc = item.querySelector(".photo img").src;
+  const cardItemTitle = item.querySelector(".card-item-title").textContent;
+  const cardItemPosition = item.querySelector(
+    ".card-item-position"
+  ).textContent;
+  const itemText = item.querySelector(".item-text").textContent;
+  const itemDate = item.querySelector(".item-test-mo-date").textContent;
 
-  // Add an event listener to check window width and add/remove the "active" class
-  window.addEventListener("resize", function () {
-    if (window.innerWidth <= 1240) {
-      mainContainer.classList.remove("active");
-    } else {
-      mainContainer.classList.add("active");
-    }
-  });
+  // Set values in the dialog
+  const dialogPersonImg = document.querySelector(".dialog-person-img");
+  const dialogPersonName = document.querySelector(".dialog-person-name");
+  const dialogPersonPosition = document.querySelector(
+    ".dialog-person-position"
+  );
+  const dialogText = document.querySelector(".dialog-text");
+  const dialogDate = document.querySelector(".dialog-date");
 
-  // Initial check on page load
-  if (window.innerWidth <= 1240) {
-    mainContainer.classList.remove("active");
-  }
-});
+  dialogPersonImg.src = imageSrc;
+  dialogPersonName.textContent = cardItemTitle;
+  dialogPersonPosition.textContent = cardItemPosition;
+  dialogText.textContent = itemText;
+  dialogDate.textContent = itemDate;
+}
 
-document.addEventListener("DOMContentLoaded", function () {
-  function showSection(sectionName) {
-    // Your existing code for the showSection function
-  }
-});
-const menuItems = document.querySelectorAll("#menu-bar-ul li a");
+// document.addEventListener("DOMContentLoaded", function () {
+//   // Get the main-container element
+//   const mainContainer = document.querySelector(".main-container");
+
+//   // Add an event listener to check window width and add/remove the "active" class
+//   window.addEventListener("resize", function () {
+//     if (window.innerWidth <= 1240) {
+//       mainContainer.classList.remove("active");
+//     } else {
+//       mainContainer.classList.add("active");
+//     }
+//   });
+
+//   // Initial check on page load
+//   if (window.innerWidth <= 1240) {
+//     mainContainer.classList.remove("active");
+//   }
+// });
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   function showSection(sectionName) {
+//     // Your existing code for the showSection function
+//   }
+// });
+const menuItems = document.querySelectorAll(".menu-bar-link ");
 
 // Add click event listener to each menu item
 menuItems.forEach((item) => {
@@ -117,24 +124,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Add click event listener to each category button
   categoryButtons.forEach((button) => {
-    button.addEventListener("click", function () {
+    button.addEventListener("click", () => {
       // Remove "active" class from all category buttons
       categoryButtons.forEach((btn) => btn.classList.remove("active"));
 
       // Add "active" class to the clicked category button
-      this.classList.add("active");
+      button.classList.add("active");
 
       // Get the category name of the clicked button
-      const categoryName = this.textContent.trim();
+      const categoryName = button.textContent.trim();
 
       // Show/hide project items based on the category
       projectItems.forEach((item) => {
+        const subCategory = item
+          .querySelector(".sub-category")
+          .textContent.trim();
         const itemCategory = item
           .querySelector(".card-item-port-text")
           .textContent.trim();
         const isAllCategory = categoryName === "All";
 
-        if (isAllCategory || itemCategory === categoryName) {
+        if (
+          isAllCategory ||
+          itemCategory === categoryName ||
+          (categoryName === "Open Source Project" &&
+            subCategory === "Open Source Project")
+        ) {
           item.style.display = "block";
         } else {
           item.style.display = "none";
@@ -144,27 +159,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-function validateForm() {
-  var name = document.getElementById("name").value;
-  var email = document.getElementById("email").value;
-  var message = document.getElementById("message").value;
-
-  // Basic non-empty check
-  if (name === "" || email === "" || message === "") {
-    alert("Please fill in all fields.");
-    return;
-  }
-
-  // Advanced email validation
-  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    alert("Please enter a valid email address.");
-    return;
-  }
-
-  // If all checks pass, proceed to submit the form
-  submitForm();
-}
 const form = document.getElementById("form");
 const result = document.getElementById("result");
 

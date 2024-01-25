@@ -1,7 +1,6 @@
 :root {
   /**
    * colors
-  Manuly add
    */
 
   /* gradient */
@@ -85,6 +84,7 @@
   --font-size-6: 14px;
   --font-size-7: 13px;
   --font-size-8: 11px;
+  --font-size-9: 10px;
 
   /* font-weight */
   --font-weight-300: 300;
@@ -442,24 +442,36 @@ body {
 
 .my-info {
   text-align: center;
+  justify-content: space-evenly;
   transition: var(--transition-1);
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
 }
 
 .my-name {
-  font-size: var(--font-size-3);
-  margin-top: 23px;
-  font-weight: var(--font-weight-400);
+  font-size: var(--font-size-1);
+  font-weight: var(--font-weight-500);
   letter-spacing: -0.25px;
 }
 .my-position {
   background: var(--onyx);
   color: var(--white-2);
   display: inline-block;
-  padding: 5px 20px;
+  padding: 4px 15px;
   border-radius: 8px;
-  font-size: 12px;
-  margin: 15.5px 0;
+  font-size: var(--font-size-8);
   transition: var(--transition-1);
+  font-weight: var(--font-weight-300);
+}
+.resume-download-btn {
+  color: var(--icon-color);
+  text-transform: uppercase;
+  font-size: var(--font-size-8);
+  opacity: 0.8;
+}
+.resume-download-btn:hover {
+  opacity: 1;
 }
 
 hr {
@@ -610,8 +622,14 @@ address {
   color: var(--light-gray);
   margin: 15px 0px;
   font-weight: 300;
-  font-size: 16px;
+  font-size: var(--font-size-5);
+  text-align: justify;
 }
+/* const itemSubCategory = item.querySelector(".sub-category").textContent.trim();
+
+
+&& itemSubCategory.includes("Open Source Project")) */
+
 .body-text span {
   height: 10px;
 }
@@ -733,7 +751,7 @@ add scrollbar color */
   margin-inline: 20px;
   text-align: start;
   flex-direction: column;
-  gap: 0.1rem;
+  gap: 0.5rem;
 }
 .card-item.team .item-text {
   font-size: var(--font-size-6);
@@ -1413,6 +1431,9 @@ add scrollbar color */
     grid-template-rows: auto 1fr;
     /* background: red; */
   }
+  .my-info {
+    align-items: center;
+  }
   .info,
   hr,
   .social-icons {
@@ -1482,8 +1503,8 @@ add scrollbar color */
     bottom: 12px;
   }
   .my-name {
-    font-size: 26px;
-    font-weight: 600;
+    font-size: var(--font-size-1);
+    font-weight: 500;
     letter-spacing: 0.35px;
   }
 
@@ -1840,7 +1861,18 @@ add scrollbar color */
   .right-side {
     padding: 15px;
   }
-
+  .my-info {
+    row-gap: 5px;
+  }
+  .my-position {
+    padding: 3px 15px;
+    border-radius: 6px;
+    font-size: var(--font-size-8);
+  }
+  .resume-download-btn {
+    font-size: var(--font-size-9);
+    align-self: center;
+  }
   .right-side {
     padding-bottom: 35px;
   }
@@ -1871,7 +1903,6 @@ add scrollbar color */
     margin: 0px;
   }
   .my-name {
-    padding-bottom: 8px;
     font-weight: 500;
     font-size: var(--font-size-2);
   }
