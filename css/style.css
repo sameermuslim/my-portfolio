@@ -168,72 +168,6 @@
   --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.1);
 }
 
-/* .light-mode {
-  --bg-gradient-onyx: linear-gradient(
-    to bottom right,
-    hsl(240, 1%, 75%) 3%,
-    hsl(0, 0%, 81%) 97%
-  );
-
-  --bg-gradient-jet: linear-gradient(
-      to bottom right,
-      hsla(240, 1%, 82%, 0.251) 0%,
-      hsla(240, 2%, 79%, 0) 100%
-    ),
-    hsl(240, 2%, 83%);
-
-  --bg-gradient-yellow-1: linear-gradient(
-    to bottom right,
-    hsl(60, 0%, 40%) 0%,
-    hsla(36, 100%, 89%, 0) 50%
-  );
-
-  --bg-gradient-yellow-2: linear-gradient(
-      135deg,
-      hsla(45, 100%, 91%, 0.251) 0%,
-      hsla(35, 100%, 88%, 0) 59.86%
-    ),
-    hsl(240, 2%, 83%);
-
-  --border-gradient-onyx: linear-gradient(
-    to bottom right,
-    hsl(0, 0%, 75%) 0%,
-    hsla(0, 0%, 75%, 0) 50%
-  );
-
-  --text-gradient-yellow: linear-gradient(
-    to right,
-    hsl(45, 2%, 44%),
-    hsl(0, 1%, 27%)
-  ); */
-
-/* Solid Colors */
-
-/* --jet: hsl(0, 0%, 78%);
-  --onyx: hsl(240, 1%, 73%);
-  --eerie-black-1: hsl(240, 2%, 83%);
-  --eerie-black-2: hsl(0, 0%, 93%); Adjusted light color
-  --overlay-background: hsl(0, 0%, 95%); Adjusted light color
-  --smoky-black: #fff; Adjusted light color
-  --white-1: hsl(0, 0%, 0%);
-  --white-2: hsl(0, 0%, 2%);
-  --orange-yellow-crayola: hsl(45, 2%, 38%);
-  --vegas-gold: hsl(45, 2%, 49%);
-  --light-gray: #2b2a2a; Adjusted light color
-  --light-gray-70: hsla(0, 0%, 16%, 0.7); Adjusted light color
-  --bittersweet-shimmer: hsl(0, 43%, 61%); Adjusted light color
-  --icon-color: linear-gradient(to right, hsl(45, 2%, 44%), hsl(0, 1%, 27%));
-  --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.1); Adjusted light shadow
-  --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.1); Adjusted light shadow
-  --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.1); Adjusted light shadow
-  --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.05); Adjusted light shadow
-  --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.1); Adjusted light shadow
-} */
-
-/*-----------------------------------*\
-  #RESET
-\*-----------------------------------*/
-
 *,
 *::before,
 *::after {
@@ -265,19 +199,6 @@ button {
 p {
   color: var(--light-gray);
 }
-
-/* p::selection,
-a::selection,
-h1::selection,
-h2::selection,
-h3::selection,
-h4::selection,
-h5::selection,
-li::selection,
-span::selection,
-input::selection,
-textarea::selection,
-a */
 ::selection {
   background: var(--text-orange-yellow-crayola);
   /* Change the background color of the selected text */
@@ -625,10 +546,6 @@ address {
   font-size: var(--font-size-5);
   text-align: justify;
 }
-/* const itemSubCategory = item.querySelector(".sub-category").textContent.trim();
-
-
-&& itemSubCategory.includes("Open Source Project")) */
 
 .body-text span {
   height: 10px;
@@ -1062,8 +979,8 @@ add scrollbar color */
   letter-spacing: 2px;
 }
 .responsibility-list-item {
-  display: list-item; /* This has to be "list-item"                                               */
-  list-style-type: circle; /* See https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type     */
+  display: list-item;
+  list-style-type: circle;
   list-style-position: outside;
   padding-left: 10px;
   font-size: 14px;
