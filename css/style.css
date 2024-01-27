@@ -356,9 +356,12 @@ body {
   border-radius: 30px;
   background: var(--bg-gradient-onyx);
   transition: var(--transition-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .photo img {
-  width: 150px;
+  width: 120px;
 }
 
 .my-info {
