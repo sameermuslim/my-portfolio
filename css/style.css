@@ -350,9 +350,9 @@ body {
   transition: var(--transition-1);
 }
 .photo {
-  width: 150px;
+  width: 130px;
   margin: 10px auto;
-  height: 150px;
+  height: 130px;
   border-radius: 30px;
   background: var(--bg-gradient-onyx);
   transition: var(--transition-1);
@@ -362,6 +362,7 @@ body {
 }
 .photo img {
   width: 120px;
+  height: 120px;
 }
 
 .my-info {
@@ -700,7 +701,8 @@ add scrollbar color */
   border-radius: 18px;
 }
 .team-info .photo img {
-  width: 90px;
+  width: 85px;
+  height: 90px;
 }
 
 /* popup dialog */
@@ -1394,14 +1396,15 @@ add scrollbar color */
   }
 
   .photo {
-    height: 115px;
-    width: 115px;
+    height: 105px;
+    width: 105px;
     margin: 0px;
     border-radius: 20px;
     text-align: center;
   }
   .photo img {
-    width: inherit;
+    height: 95px;
+    width: 95px;
   }
   .my-info {
     text-align: start;
@@ -1459,6 +1462,8 @@ add scrollbar color */
   }
   .test-mo .card-item .photo img {
     width: 80px;
+    height: 80px;
+
     margin: 0px;
   }
 }
@@ -1816,8 +1821,8 @@ add scrollbar color */
   }
 
   .profile .photo {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
   }
   .profile .my-info * {
     margin: 0px;
