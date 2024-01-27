@@ -333,6 +333,7 @@ body {
 }
 .toggle-mode img {
   height: 13px;
+  width: 13px;
 }
 
 .toggle-mode.light-mode {
@@ -1508,6 +1509,7 @@ add scrollbar color */
   }
   .toggle-mode img {
     height: 12px;
+    width: 12px;
   }
 
   .toggle-mode.light-mode {

@@ -4,6 +4,9 @@ const leftSide = document.getElementById("left-side");
 const overlayPanel = document.getElementById("overlay");
 const dialogPanel = document.getElementById("full-screen-dialog");
 const dialogCloseBtn = document.getElementById("dialog-close-btn");
+const mapIfrem = document.getElementById("map-container");
+const mapSrc =
+  "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d18301.937956932157!2d67.11375233052213!3d36.71107776030838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1704266137782!5m2!1sen!2s";
 
 // Close dialog on "Escape" key press
 document.addEventListener("keydown", function (event) {
@@ -67,30 +70,6 @@ function updateDialog(item) {
   dialogDate.textContent = itemDate;
 }
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   // Get the main-container element
-//   const mainContainer = document.querySelector(".main-container");
-
-//   // Add an event listener to check window width and add/remove the "active" class
-//   window.addEventListener("resize", function () {
-//     if (window.innerWidth <= 1240) {
-//       mainContainer.classList.remove("active");
-//     } else {
-//       mainContainer.classList.add("active");
-//     }
-//   });
-
-//   // Initial check on page load
-//   if (window.innerWidth <= 1240) {
-//     mainContainer.classList.remove("active");
-//   }
-// });
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   function showSection(sectionName) {
-//     // Your existing code for the showSection function
-//   }
-// });
 const menuItems = document.querySelectorAll(".menu-bar-link ");
 
 // Add click event listener to each menu item
@@ -101,6 +80,10 @@ menuItems.forEach((item) => {
 
     // Add "active" class to the clicked menu item
     this.classList.add("active");
+
+    if (this.textContent.trim() === "Contact") {
+      mapIfrem.src = mapSrc;
+    }
 
     // Hide all sections
     const sections = document.querySelectorAll(".the-section");
