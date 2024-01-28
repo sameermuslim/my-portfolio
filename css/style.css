@@ -591,8 +591,6 @@ address {
   font-size: var(--font-size-5); /* Ensure proper line height */
 }
 
-
-
 /* start of what I'm doing | services  */
 .section-title {
   margin: 20px 0px;
@@ -1126,7 +1124,6 @@ add scrollbar color */
   position: relative;
 }
 
-
 .card-port-f-bunner .bunner-img {
   position: absolute;
   width: 100%;
@@ -1160,7 +1157,6 @@ add scrollbar color */
   border-radius: 8px;
   background: var(--onyx);
 }
-
 
 .card-item-portfolio .card-item-port-text,
 .card-item-port-title,
@@ -1238,7 +1234,8 @@ add scrollbar color */
   border: 1.3px solid var(--jet);
   outline: none;
 }
-.input:focus {
+.input:focus,
+.send-btn:focus {
   border: 1.3px solid var(--vegas-gold);
 }
 
@@ -1479,7 +1476,7 @@ add scrollbar color */
   .card-blog-details .card-blog-text {
     -webkit-line-clamp: 2;
   }
-  
+}
 @media (max-width: 770px) {
   .main-container.active {
     grid-template-rows: auto 1fr;
