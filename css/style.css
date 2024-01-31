@@ -512,7 +512,7 @@ address {
   list-style: none;
 }
 .menu-bar-link {
-  font-weight: 500;
+  font-weight: var(--font-weight-500);
   color: var(--menu-bar-text);
   float: left;
   margin-right: 10px;
@@ -1425,6 +1425,7 @@ add scrollbar color */
   .menu-bar-link {
     font-size: 14px;
     font-weight: 500;
+    margin-right: 13px;
   }
 
   .right-side .big-title {
@@ -1554,10 +1555,13 @@ add scrollbar color */
   .menu-bar {
     position: fixed !important;
   }
-
+  .menu-bar-ul {
+    width: 65%;
+  }
   .menu-bar .menu-bar-link {
-    font-size: 11px;
-    font-weight: 400;
+    font-size: 12px;
+    font-weight: var(--font-weight-500);
+    margin-right: 20px;
   }
   .contact-list {
     display: flex;
@@ -1699,6 +1703,9 @@ add scrollbar color */
   .left-side,
   .right-side {
     padding: 15px;
+  }
+  .menu-bar-ul {
+    width: 75%;
   }
   .my-info {
     row-gap: 5px;
