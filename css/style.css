@@ -384,7 +384,9 @@ body {
   background: var(--onyx);
   color: var(--white-2);
   display: inline-block;
-  padding: 4px 15px;
+  width: max-content;
+
+  padding: 6px 12px;
   border-radius: 8px;
   font-size: var(--font-size-8);
   transition: var(--transition-1);
@@ -960,9 +962,6 @@ add scrollbar color */
 }
 .resume-responsibilities-list {
   margin-left: 20px;
-}
-.resume-responsibilities-list li {
-  letter-spacing: 2px;
 }
 .responsibility-list-item {
   display: list-item;
@@ -1711,8 +1710,10 @@ add scrollbar color */
     row-gap: 5px;
   }
   .my-position {
-    padding: 3px 15px;
+    padding: 6px 8px;
     border-radius: 6px;
+    width: max-content;
+
     font-size: var(--font-size-8);
   }
   .resume-download-btn {
